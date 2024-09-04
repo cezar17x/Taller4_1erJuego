@@ -8,7 +8,7 @@ public class GolpearPelota : MonoBehaviour
         if (other.CompareTag("BallGolf"))
         {
             print("Colisiono");
-            Vector3 impulseDirection = transform.forward;
+            Vector3 impulseDirection = transform.up;
             other.GetComponent<Rigidbody>().AddForce(impulseDirection * fuerzaImpulso, ForceMode .Impulse);
             other.GetComponent<MoverPelotaAcelerometro>().enabled = true; 
         }
