@@ -1,16 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class GolpearPelota : MonoBehaviour
 {
     public float fuerzaImpulso = 10f;
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.gameObject.CompareTag("BallGolf"))
+        if (other.CompareTag("BallGolf"))
         {
+            print("Colisiono");
             Vector3 impulseDirection = transform.forward;
-            collision.gameObject.GetComponent<Rigidbody>().AddForce(impulseDirection * fuerzaImpulso, ForceMode.Impulse);
+            other.GetComponent<Rigidbody>().AddForce(impulseDirection * fuerzaImpulso, ForceMode .Impulse);
+            other.GetComponent<MoverPelotaAcelerometro>().enabled = true; 
         }
     }
 }
