@@ -20,11 +20,27 @@ public class Velocimetro : MonoBehaviour
         {
             valorVelocimetro = Mathf.PingPong(Time.time * velocidad, 1);
             float angle = Mathf.Lerp(minAngle, maxAngle, valorVelocimetro);
-            aguja.localEulerAngles = new Vector3(0, 0, -angle);
-            brian.SetFloat("VelocimetroValor", valorVelocimetro);
+            aguja.localEulerAngles = new Vector3(0, 0, -angle);       
         }
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && activo)
         {
+            brian.SetFloat("VelocimetroValor", valorVelocimetro);
+            Debug.Log("Valor del Velocímetro: " + valorVelocimetro);
+            if (valorVelocimetro <= 0.2f)
+            {
+                brian.Play("golpeSuave");
+                Debug.Log("Estamos en verde");
+            }
+            else if (valorVelocimetro >= 0.8f)
+            {
+                brian.Play("GolpeFuerte");
+                Debug.Log("Estamos en rojo");
+            }
+            else
+            {
+                brian.Play("golpeSuave");
+                Debug.Log("Estamos en el centro");
+            }
             activo = false;
             DesactivarVelocimetro();
         }
