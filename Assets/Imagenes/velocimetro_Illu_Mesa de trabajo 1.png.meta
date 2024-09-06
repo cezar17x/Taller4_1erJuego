@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ebb7f4976d5634440ab54d41ad3bd719
+guid: 940e9be726ce8374593c15e8017e4d79
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -110,13 +110,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: velocimetro+aguja_0
+      name: velocimetro_Illu_Mesa de trabajo 1_0
       rect:
         serializedVersion: 2
-        x: 99
-        y: 226
-        width: 299
-        height: 157
+        x: 65
+        y: 180
+        width: 301
+        height: 154
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,20 +124,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 73135a137b36d1f489368ac4ceada712
-      internalID: 2023110824
+      spriteID: 0cc72cfb93b7c3148bb001adf4c1cdf4
+      internalID: -1430907338
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: velocimetro+aguja_1
+      name: velocimetro_Illu_Mesa de trabajo 1_1
       rect:
         serializedVersion: 2
-        x: 195
-        y: 88
-        width: 83
-        height: 113
+        x: 163
+        y: 38
+        width: 88
+        height: 110
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,8 +145,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fe62575bca751e44e9f46d2b20cd6ac2
-      internalID: 740606907
+      spriteID: a9ced44e5ab115c48ae194c2e63ccdb4
+      internalID: -434903511
       vertices: []
       indices: 
       edges: []
@@ -162,8 +162,8 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      velocimetro+aguja_0: 2023110824
-      velocimetro+aguja_1: 740606907
+      velocimetro_Illu_Mesa de trabajo 1_0: -1430907338
+      velocimetro_Illu_Mesa de trabajo 1_1: -434903511
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
