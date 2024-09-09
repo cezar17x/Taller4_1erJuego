@@ -148,12 +148,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 30928280}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1179017303}
+  m_Father: {fileID: 1229695267}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &30928282
 MonoBehaviour:
@@ -171,10 +171,9 @@ MonoBehaviour:
   minAngle: -160
   maxAngle: 100
   velocidad: 2
-  agujaimage: {fileID: 1425611423}
-  velocimetro: {fileID: 1491441701}
   valorVelocimetro: 0
   brian: {fileID: 50705544}
+  velocimetro: {fileID: 53666849}
 --- !u!1 &50705543
 GameObject:
   m_ObjectHideFlags: 0
@@ -241,6 +240,7 @@ GameObject:
   - component: {fileID: 53666848}
   - component: {fileID: 53666847}
   - component: {fileID: 53666846}
+  - component: {fileID: 53666849}
   m_Layer: 0
   m_Name: Velocimetro
   m_TagString: Untagged
@@ -333,6 +333,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!225 &53666849
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 53666844}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &65035330
 GameObject:
   m_ObjectHideFlags: 0
@@ -1767,7 +1779,6 @@ Transform:
   - {fileID: 2190384547468186156}
   - {fileID: 3115053778485744682}
   - {fileID: 1450220898}
-  - {fileID: 30928281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1224648309
@@ -2037,6 +2048,7 @@ Transform:
   - {fileID: 979862684}
   - {fileID: 292846091}
   - {fileID: 402404179}
+  - {fileID: 30928281}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1348505240
@@ -2815,7 +2827,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1755098990}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18164778, y: 0.006942322, z: -0.0012824245, w: 0.98333836}
+  m_LocalRotation: {x: 0.18164778, y: 0.006942339, z: -0.0012824277, w: 0.98333836}
   m_LocalPosition: {x: 9.070001, y: 3.24, z: -3.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2882,7 +2894,7 @@ GameObject:
   - component: {fileID: 1841249606}
   - component: {fileID: 1841249605}
   - component: {fileID: 1841249604}
-  - component: {fileID: 1841249603}
+  - component: {fileID: 1841249609}
   m_Layer: 0
   m_Name: cilindroder
   m_TagString: Untagged
@@ -2890,19 +2902,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1841249603
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1841249602}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cad9f11f55017b6498869ec5f8f0c99b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  fuerza: 5
 --- !u!64 &1841249604
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3011,6 +3010,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 90}
+--- !u!114 &1841249609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1841249602}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4fe4d52ca71e06847a0f08cc81d8b4e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fuerza: 5
+  izquierda: 0
+  derecha: 1
 --- !u!1 &1845694665
 GameObject:
   m_ObjectHideFlags: 0
@@ -3097,6 +3111,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fuerza: 5
+  izquierda: 1
+  derecha: 0
 --- !u!64 &1909479601
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -3302,7 +3318,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2030540972}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.18164778, y: 0.006942322, z: -0.0012824245, w: 0.98333836}
+  m_LocalRotation: {x: 0.18164778, y: 0.006942339, z: -0.0012824277, w: 0.98333836}
   m_LocalPosition: {x: 9.070001, y: 3.24, z: -3.92}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -8758,7 +8774,7 @@ ParticleSystem:
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}
-        key1: {r: 1, g: 1, b: 1, a: 1}
+        key1: {r: 1, g: 1, b: 1, a: 0}
         key2: {r: 0, g: 0, b: 0, a: 0}
         key3: {r: 0, g: 0, b: 0, a: 0}
         key4: {r: 0, g: 0, b: 0, a: 0}
