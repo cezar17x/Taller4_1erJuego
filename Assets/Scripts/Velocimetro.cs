@@ -27,36 +27,26 @@ public class Velocimetro : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began && activo)
         {
             brian.SetFloat("VelocimetroValor", valorVelocimetro);
-            Debug.Log("Valor del Velocímetro: " + valorVelocimetro);
+            //Debug.Log("Valor del Velocímetro: " + valorVelocimetro);
             if (valorVelocimetro <= 0.2f)
             {
                 brian.Play("golpeSuave");
-                Debug.Log("Estamos en verde");
+                //Debug.Log("Estamos en verde");
             }
             else if (valorVelocimetro >= 0.8f)
             {
                 brian.Play("GolpeFuerte");
-                Debug.Log("Estamos en rojo");
+                //Debug.Log("Estamos en rojo");
             }
             else
             {
                 brian.Play("golpeSuave");
-                Debug.Log("Estamos en el centro");
+                //Debug.Log("Estamos en el centro");
             }
             activo = false;
             DesactivarVelocimetro();
         }
         
-    }
-    IEnumerator Descativar()
-    {
-        yield return new WaitForSeconds(2);
-        
-        /*
-        agujaimage.SetActive(false);
-        velocimetro.SetActive(false);
-        fondo.SetActive(false);
-        */
     }
     void DesactivarVelocimetro()
     {
@@ -71,7 +61,7 @@ public class Velocimetro : MonoBehaviour
         // Reduce el alpha a 0 en 2 segundos (fade out)
         velocimetro.DOFade(0, 2f).OnComplete(() =>
         {
-            Debug.Log("Fade Out completado");
+            //Debug.Log("Fade Out completado");
         });
     }
 }

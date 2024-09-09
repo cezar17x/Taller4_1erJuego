@@ -21,6 +21,6 @@ public class GolpearPelota : MonoBehaviour
     public void ActualizarFuerzaImpulso(float valorVelocimetro)
     {
         fuerzaImpulso = Mathf.Lerp(2f, 20f, valorVelocimetro);  // Ajusta los valores mínimo y máximo según sea necesario
-        print(fuerzaImpulso);
+        //print(fuerzaImpulso);
     }
 }
