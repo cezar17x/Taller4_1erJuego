@@ -18188,6 +18188,7 @@ GameObject:
   - component: {fileID: 1449207024}
   - component: {fileID: 1449207020}
   - component: {fileID: 1449207025}
+  - component: {fileID: 1449207026}
   m_Layer: 0
   m_Name: bolla_golf
   m_TagString: BallGolf
@@ -18445,6 +18446,20 @@ TrailRenderer:
   m_Autodestruct: 0
   m_Emitting: 1
   m_ApplyActiveColorSpace: 1
+--- !u!114 &1449207026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449207018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5882711c43b4a642a68ff2b905788f7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetTag: Hoyo
+  destination: {fileID: 402404179}
 --- !u!1 &1450220894
 GameObject:
   m_ObjectHideFlags: 0
@@ -29602,7 +29617,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 919132148027071885}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.76378036, z: -0, w: 0.6454763}
+  m_LocalRotation: {x: 0.45642167, y: -0.5400734, z: -0.5400734, w: -0.45642167}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 14.18514, y: 14.185135, z: 14.18514}
   m_ConstrainProportionsScale: 0

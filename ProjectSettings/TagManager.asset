@@ -8,6 +8,7 @@ TagManager:
   - obstaculo
   - BallGolf
   - Terreno
+  - Hoyo
   layers:
   - Default
   - TransparentFX
