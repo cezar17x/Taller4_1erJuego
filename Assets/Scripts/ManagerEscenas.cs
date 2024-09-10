@@ -10,17 +10,10 @@ public class ManagerEscenas : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         Time.timeScale = 1;
     }
-    public void Pausa()
-    {
-
-    }
-    public void Despausa()
-    {
-
-    }
     public void Menu()
     {
         SceneManager.LoadScene(0);
+        Time.timeScale = 1;
     }
     public void Salir()
     {

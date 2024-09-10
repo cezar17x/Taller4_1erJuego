@@ -1,5 +1,6 @@
+using System;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class GolpearPelota : MonoBehaviour
 {
     public float fuerzaImpulso = 10f;
@@ -8,19 +9,32 @@ public class GolpearPelota : MonoBehaviour
     {
         instance = this;    
     }
+    private void Start()
+    {
+        Scene escena = SceneManager.GetActiveScene(); 
+    }
     private void OnTriggerEnter(Collider other)
     {
+        Scene escena = SceneManager.GetActiveScene();
         if (other.CompareTag("BallGolf"))
         {
             print("Colisiono");
             Vector3 impulseDirection = transform.up;
+            if (escena.buildIndex == 3)
+                impulseDirection = transform.forward;  
+            else
+                impulseDirection = transform.up;
             other.GetComponent<Rigidbody>().AddForce(impulseDirection * fuerzaImpulso, ForceMode.Impulse);
             other.GetComponent<MoverPelotaAcelerometro>().enabled = true; 
         }
     }
     public void ActualizarFuerzaImpulso(float valorVelocimetro)
     {
-        fuerzaImpulso = Mathf.Lerp(2f, 20f, valorVelocimetro);  // Ajusta los valores mínimo y máximo según sea necesario
+        Scene escena = SceneManager.GetActiveScene();
+        if (escena.buildIndex == 3)
+            fuerzaImpulso = Mathf.Lerp(1f, 5f, valorVelocimetro);
+        else
+            fuerzaImpulso = Mathf.Lerp(2f, 20f, valorVelocimetro);  // Ajusta los valores mínimo y máximo según sea necesario
         //print(fuerzaImpulso);
     }
 }

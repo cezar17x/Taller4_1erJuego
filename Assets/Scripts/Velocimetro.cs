@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using UnityEngine.SceneManagement;
 
 public class Velocimetro : MonoBehaviour
 {
@@ -14,8 +15,11 @@ public class Velocimetro : MonoBehaviour
     public float valorVelocimetro = 0f;  // Valor actual del velocímetro (0-1)
     private bool activo = true; 
     public Animator brian;
-    public CanvasGroup velocimetro;
-
+    public CanvasGroup velocimetro, Instrucciones;
+    private void Start()
+    {
+        Scene escena = SceneManager.GetActiveScene();
+    }
     void Update()
     {
         if (activo)
@@ -50,11 +54,28 @@ public class Velocimetro : MonoBehaviour
     }
     void DesactivarVelocimetro()
     {
+        Scene escena = SceneManager.GetActiveScene();
         /* Desaparecer el velocímetro (opcional: hacer fade out)
         gameObject.SetActive(false);
         StartCoroutine(Descativar());*/
         FadeOut();
         GolpearPelota.instance.ActualizarFuerzaImpulso(valorVelocimetro);
+        if (escena.buildIndex == 1)
+        {
+            StartCoroutine(Aparecer());
+        }    
+    }
+    IEnumerator Aparecer()
+    {
+        Instrucciones.DOFade(1, 3f).OnComplete(() =>
+        {
+            //Debug.Log("Fade Out completado");
+        });
+        yield return new WaitForSeconds(8);
+        Instrucciones.DOFade(0, 2f).OnComplete(() =>
+        {
+            //Debug.Log("Fade Out completado");
+        });
     }
     public void FadeOut()
     {
